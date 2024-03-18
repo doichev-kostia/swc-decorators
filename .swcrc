@@ -1,0 +1,33 @@
+{
+  "jsc": {
+    "minify": {
+      "compress": {
+        "unused": false
+      },
+      "mangle": false
+    },
+    "parser": {
+      "syntax": "typescript",
+      "decorators": true,
+      "tsx": false,
+      "dynamicImport": true
+    },
+    "target": "esnext",
+    "transform": {
+      "decoratorMetadata": true,
+      "legacyDecorator": true
+    },
+    "keepClassNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "module": {
+    "type": "commonjs"
+  },
+  "minify": false,
+  "sourceMaps": true
+}
