@@ -1,5 +1,6 @@
 POST http://127.0.0.1:{{port}}/authors
-
+###
+GET http://127.0.0.1:{{port}}/authors
 ###
 
 POST http://127.0.0.1:{{port}}/books
@@ -8,3 +9,8 @@ Content-Type: application/json
 {
   "authorId": "50d0e540-2438-4571-a822-a988cca49b47"
 }
+
+
+###
+
+GET http://127.0.0.1:{{port}}/books

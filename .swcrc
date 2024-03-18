@@ -1,11 +1,5 @@
 {
   "jsc": {
-    "minify": {
-      "compress": {
-        "unused": false
-      },
-      "mangle": false
-    },
     "parser": {
       "syntax": "typescript",
       "decorators": true,
@@ -28,6 +22,6 @@
   "module": {
     "type": "commonjs"
   },
-  "minify": false,
+  "minify": true,
   "sourceMaps": true
 }

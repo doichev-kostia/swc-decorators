@@ -1,6 +1,9 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
 import { AppService } from "./app.service";
 import { CreateBookDto } from "~/dto/create-book.dto";
+import { CreateAuthorDto } from "~/dto/create-author.dto";
+import { BookDto } from "~/dto/book.dto";
+import { AuthorDto } from "~/dto/author.dto";
 
 @Controller()
 export class AppController {
@@ -13,22 +16,22 @@ export class AppController {
 	}
 
 	@Post("/authors")
-	async createAuthor() {
-		return this.appService.createAuthor();
+	async createAuthor(@Body() body: CreateAuthorDto): Promise<AuthorDto> {
+		return this.appService.createAuthor(body);
 	}
 
 	@Get("/authors")
-	async getAuthors() {
+	async getAuthors(): Promise<AuthorDto[]> {
 		return this.appService.getAuthors();
 	}
 
 	@Post("/books")
-	async createBook(@Body() body: CreateBookDto) {
-		return this.appService.createBook(body.authorId);
+	async createBook(@Body() body: CreateBookDto): Promise<BookDto> {
+		return this.appService.createBook(body);
 	}
 
 	@Get("/books")
-	async getBooks() {
+	async getBooks(): Promise<BookDto[]> {
 		return this.appService.getBooks();
 	}
 }

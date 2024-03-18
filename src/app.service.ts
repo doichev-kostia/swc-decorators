@@ -2,6 +2,8 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { EntityManager } from "@mikro-orm/sqlite";
 import { Book } from "~/entities/Book";
 import { Author } from "~/entities/Author";
+import { CreateAuthorDto } from "~/dto/create-author.dto";
+import { CreateBookDto } from "~/dto/create-book.dto";
 
 @Injectable()
 export class AppService {
@@ -12,10 +14,10 @@ export class AppService {
 		return "Hello World!";
 	}
 
-	async createAuthor() {
+	async createAuthor(data: CreateAuthorDto) {
 		// @ts-ignore
 		const author = this.em.create(Author, {
-			name: "Jon Snow",
+			name: data.name,
 		});
 
 		await this.em.persistAndFlush(author);
@@ -27,9 +29,9 @@ export class AppService {
 		return this.em.find(Author, {});
 	}
 
-	async createBook(authorId: string) {
+	async createBook(data: CreateBookDto) {
 		const author = await this.em.findOne(Author, {
-			id: authorId
+			id: data.authorId
 		});
 
 		if (!author) {
@@ -38,7 +40,7 @@ export class AppService {
 
 		// @ts-ignore
 		const book = this.em.create(Book, {
-			title: "My First Book",
+			title: data.title,
 			author,
 		});
 

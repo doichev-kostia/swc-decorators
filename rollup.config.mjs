@@ -45,7 +45,6 @@ const config = defineConfig({
             swc: {
                 jsc: swcConfig.jsc,
                 root: swcConfig.root,
-
             }
         }),
     ],
