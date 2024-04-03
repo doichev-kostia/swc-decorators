@@ -15,7 +15,6 @@ export class AppService {
 	}
 
 	async createAuthor(data: CreateAuthorDto) {
-		// @ts-ignore
 		const author = this.em.create(Author, {
 			name: data.name,
 		});
@@ -38,7 +37,6 @@ export class AppService {
 			throw new NotFoundException("Author not found");
 		}
 
-		// @ts-ignore
 		const book = this.em.create(Book, {
 			title: data.title,
 			author,

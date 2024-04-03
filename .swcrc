@@ -6,7 +6,7 @@
       "tsx": false,
       "dynamicImport": true
     },
-    "target": "esnext",
+    "target": "es2022",
     "transform": {
       "decoratorMetadata": true,
       "legacyDecorator": true
@@ -17,7 +17,8 @@
       "~/*": [
         "./src/*"
       ]
-    }
+    },
+    "loose": true
   },
   "module": {
     "type": "commonjs"
