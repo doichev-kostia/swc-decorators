@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { AppService } from "./app.service";
+import { AppService } from "~/app.service";
 import { CreateBookDto } from "~/dto/create-book.dto";
 import { CreateAuthorDto } from "~/dto/create-author.dto";
 import { BookDto } from "~/dto/book.dto";

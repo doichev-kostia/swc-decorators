@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { EntityManager } from "@mikro-orm/sqlite";
-import { Book } from "~/entities/Book";
-import { Author } from "~/entities/Author";
+import { Book } from "db/entities/Book";
+import { Author } from "db/entities/Author";
 import { CreateAuthorDto } from "~/dto/create-author.dto";
 import { CreateBookDto } from "~/dto/create-book.dto";
 

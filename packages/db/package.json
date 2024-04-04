@@ -1,0 +1,41 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "description": "",
+  "type": "commonjs",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "swc ./src -d build --strip-leading-paths && tsc --emitDeclarationOnly"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^6.1.10",
+    "@mikro-orm/sqlite": "^6.1.10"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^6.1.10",
+    "ts-node": "^10.9.2",
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "1.4.11",
+    "@swc/helpers": "^0.5.7",
+    "@types/node": "20",
+    "chokidar": "^3.6.0"
+  },
+  "exports": {
+    ".": {
+      "require": "./build/index.js",
+      "import": "./build/index.js",
+      "types": "./build/index.d.ts"
+    },
+    "./entities": {
+      "require": "./build/entities/index.js",
+      "import": "./build/entities/index.js",
+      "types": "./src/entities/index.ts"
+    },
+    "./entities/*": {
+      "require": "./build/entities/*.js",
+      "import": "./build/entities/*.js",
+      "types": "./src/entities/*.ts"
+    }
+  }
+}

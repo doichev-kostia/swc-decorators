@@ -1,0 +1,57 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:nest": "nest build",
+    "start:nest": "nest start",
+    "build:swc": "swc ./src -d build --strip-leading-paths",
+    "build": "rollup -c ./rollup.config.mjs"
+  },
+  "dependencies": {
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
+    "reflect-metadata": "^0.2.0",
+    "remeda": "^1.53.0",
+    "rxjs": "^7.8.1",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "db": "workspace:^",
+    "@mikro-orm/core": "^6.1.10",
+    "@mikro-orm/sqlite": "^6.1.10",
+    "@mikro-orm/nestjs": "^5.2.3"
+  },
+  "devDependencies": {
+    "@mikro-orm/cli": "^6.1.10",
+    "ts-node": "^10.9.2",
+    "@nestjs/cli": "^10.0.0",
+    "@nestjs/schematics": "^10.0.0",
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-swc": "^0.3.0",
+    "@rollup/pluginutils": "^5.1.0",
+    "@swc/cli": "^0.3.12",
+    "@swc/core": "1.4.11",
+    "@swc/helpers": "^0.5.7",
+    "@types/node": "20",
+    "chokidar": "^3.6.0",
+    "rollup": "^4.13.0",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "source-map-support": "^0.5.21",
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "mikro-orm": {
+    "useTsNode": true,
+    "configPaths": [
+      "./src/orm.ts",
+      "./dist/orm.js"
+    ]
+  }
+}
